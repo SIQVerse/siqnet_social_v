@@ -7,10 +7,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY", "your-dev-secret-key")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# DEBUG MODE ENABLED FOR TROUBLESHOOTING
+DEBUG = True
 
-ALLOWED_HOSTS = ["siqnet-social-v.onrender.com"]
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 INSTALLED_APPS = [
