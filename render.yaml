@@ -4,10 +4,10 @@ services:
     env: python
     plan: starter
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn siqnet_social.wsgi:application
+    startCommand: gunicorn siqnet_social_v.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
-        value: siqnet_social.settings
+        value: siqnet_social_v.settings
       - key: SECRET_KEY
         value: 5xv$w!v@z#6z&u$7^r@x$e@p@3z!g@j@u@r@x$e@p@3z!g@j@u
       - key: DISABLE_COLLECTSTATIC
