@@ -1,1 +1,16 @@
+services:
+  - type: web
+    name: siqnet-social-v
+    env: python
+    repo: https://github.com/SIQVerse/siqnet_social_v
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn siqnet_social.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: siqnet_social.settings
+      - key: SECRET_KEY
+        sync: false
+      - key: DEBUG
+        value: false
 
