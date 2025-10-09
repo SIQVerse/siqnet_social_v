@@ -2,6 +2,7 @@ services:
   - type: web
     name: siqnet-social-v
     env: python
+    plan: free
     repo: https://github.com/SIQVerse/siqnet_social_v
     branch: main
     buildCommand: pip install -r requirements.txt
