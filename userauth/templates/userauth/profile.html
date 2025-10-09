@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2>Welcome, {{ user.username }}</h2>
+
+    <h4>Your Posts</h4>
+    {% if posts %}
+      <ul class="list-group">
+        {% for post in posts %}
+          <li class="list-group-item">
+            <h5>{{ post.title }}</h5>
+            <p>{{ post.content }}</p>
+            <small class="text-muted">Posted on {{ post.created_at|date:"M d, Y H:i" }}</small>
+          </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>You haven’t posted anything yet.</p>
+    {% endif %}
+  </div>
+{% endblock %}

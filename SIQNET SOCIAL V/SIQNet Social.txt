@@ -1,0 +1,21 @@
+siqnet_social/
+├── manage.py
+├── siqnet_social/        ← main project settings folder
+│   ├── __init__.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── versnet/              ← your app folder
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│   ├── templates/
+│   │   └── versnet/
+│   │       ├── create_post.html
+│   │       ├── edit_post.html
+│   │       ├── confirm_delete.html
+│   │       ├── profile.html
+│   │       └── home.html
+├── db.sqlite3
+├── requirements.txt
+├── .gitignore

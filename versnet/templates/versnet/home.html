@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5 text-center">
+    <h1>Welcome to SIQNet Social 🌍</h1>
+    <p class="lead">Powered by SIQNET DYNAMICS GENERAL DEALING</p>
+    <p>Built on the Zulu Principle of Communicative Silence and the Silence Intelligence Quotient (SIQ)</p>
+    <hr>
+    <a href="{% url 'create_post' %}" class="btn btn-success btn-lg">Create a Post</a>
+    <a href="{% url 'profile' %}" class="btn btn-primary btn-lg">View Your Profile</a>
+  </div>
+{% endblock %}
