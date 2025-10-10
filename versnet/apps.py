@@ -1,5 +1,8 @@
 from django.apps import AppConfig
 
-class VersnetConfig(AppConfig):
+class AccountsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'versnet'
+    name = 'accounts'
+
+    def ready(self):
+        import accounts.signals
