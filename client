@@ -1,0 +1,11 @@
+siqnet_social/
+├── client/               # React frontend goes here
+│   ├── public/
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── App.css
+│   │   └── index.js
+│   └── package.json
+├── server/               # Node.js backend (optional for now)
+│   ├── server.js
+│   └── package.json
