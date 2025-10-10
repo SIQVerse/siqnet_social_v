@@ -1,3 +1,5 @@
+# accounts/views.py
+
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login
 from django.shortcuts import render, redirect
@@ -8,7 +10,7 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('home')  # Replace with your homepage URL name
+            return redirect('home')  # Replace 'home' with your homepage URL name
     else:
         form = UserCreationForm()
     return render(request, 'accounts/register.html', {'form': form})
