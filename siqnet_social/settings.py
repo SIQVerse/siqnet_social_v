@@ -1,4 +1,4 @@
-# settings.py
+# siqnet/settings.py
 
 import os
 from pathlib import Path
@@ -11,7 +11,6 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['siqnet-social.onrender.com']
 
-# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -32,7 +31,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# Replace 'siqnet' with your actual project name
 ROOT_URLCONF = 'siqnet.urls'
 
 TEMPLATES = [
@@ -53,7 +51,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'siqnet.wsgi.application'
 
-# Database (example using SQLite)
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -61,13 +58,10 @@ DATABASES = {
     }
 }
 
-# Static files
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
-# Media files (optional)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
