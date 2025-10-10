@@ -18,7 +18,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "accounts",
+    "accounts.apps.AccountsConfig",  # ✅ Use custom config to avoid label conflict
     "community",
     "siqnet_social",
     "siqposts",
