@@ -13,3 +13,4 @@ TEMPLATES = [
         },
     },
 ]
+ALLOWED_HOSTS = ['siqnet-social-v.onrender.com']
