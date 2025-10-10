@@ -1,13 +1,7 @@
-# siqnet_social/urls.py
-
-from django.contrib import admin
-from django.urls import path, include
-from userauth import views as userauth_views
+from django.urls import path
+from .views import register, login_view
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', userauth_views.home, name='home'),
-
-    # ✅ Auth routes
-    path('accounts/', include('accounts.urls')),
+    path('register/', register, name='register'),
+    path('login/', login_view, name='login'),
 ]
