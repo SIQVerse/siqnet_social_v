@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ profile_user.username }}'s Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+            background-color: #f9f9f9;
+        }
+        .profile-container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h2>{{ profile_user.username }}</h2>
+
+        {% if profile %}
+            {% if profile.avatar %}
+                <img src="{{ profile.avatar.url }}" alt="Avatar" class="avatar">
+            {% endif %}
+            <p><strong>Bio:</strong> {{ profile.bio }}</p>
+            <p><strong>Location:</strong> {{ profile.location }}</p>
+        {% else %}
+            <p>This user has no public profile yet.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
