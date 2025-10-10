@@ -1,15 +1,9 @@
+# .render.yaml
+
 services:
   - type: web
-    name: siqnet-social-v
+    name: siqnet-social
     env: python
-    plan: starter
-    buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn siqnet_social.wsgi:application
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: siqnet_social.settings
-      - key: SECRET_KEY
-        value: 5xv$w!v@z#6z&u$7^r@x$e@p@3z!g@j@u@r@x$e@p@3z!g@j@u
-      - key: DISABLE_COLLECTSTATIC
-        value: 1
-    autoDeploy: true
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn siqnet.wsgi:application"
+    plan: free
