@@ -5,7 +5,7 @@ class Post(models.Model):
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
-        related_name="siqnet_posts"
+        related_name="posts_from_siqnet_social"
     )
     title = models.CharField(max_length=200)
     content = models.TextField()
