@@ -1,14 +1,68 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Register</title>
+  <meta charset="UTF-8">
+  <title>Register | SIQNet Social V</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h2>Register</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign Up</button>
-    </form>
+
+  <!-- 🔷 Branded Header -->
+  <header style="text-align: center; padding: 20px;">
+    <img src="{% static 'images/siqnet-logo.png' %}" alt="SIQNet Logo" height="60">
+    <h1>SIQNet Social V</h1>
+  </header>
+
+  <h2 style="text-align: center;">Join the SIQNet Movement</h2>
+
+  <!-- ⚠️ Error Messages -->
+  {% if form.errors %}
+    <div style="color: red; text-align: center; margin-bottom: 10px;">
+      <strong>Registration failed:</strong> Please correct the errors below.
+    </div>
+  {% endif %}
+
+  {% if messages %}
+    {% for message in messages %}
+      <div style="color: green; text-align: center; margin-bottom: 10px;">
+        {{ message }}
+      </div>
+    {% endfor %}
+  {% endif %}
+
+  <!-- 📝 Custom Form -->
+  <form method="post">
+    {% csrf_token %}
+
+    <label for="username">👤 Username</label>
+    <input type="text" name="username" required>
+
+    <label for="email">📧 Email</label>
+    <input type="email" name="email" required>
+
+    <label for="password1">🔒 Password</label>
+    <input type="password" name="password1" required>
+
+    <label for="password2">🔒 Confirm Password</label>
+    <input type="password" name="password2" required>
+
+    <label>
+      <input type="checkbox" name="terms" required>
+      I agree to the <a href="{% url 'terms' %}">Terms of Service</a>
+    </label>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div style="text-align: center; margin-top: 15px;">
+    <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+  </div>
+
+  <!-- 🔷 Branded Footer -->
+  <footer style="text-align: center; padding: 10px; font-size: 14px;">
+    © {{ year }} SIQNet Social V. Powered by Silence.
+  </footer>
+
 </body>
 </html>
