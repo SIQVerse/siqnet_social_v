@@ -1,0 +1,17 @@
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+
+subject = "Welcome to SIQNet 🎉"
+from_email = 'SIQNet <noreply@siqnet.com>'
+to_email = user.email
+
+text_content = "Welcome to SIQNet! Click the link to verify your email."
+html_content = render_to_string('emails/welcome.html', {
+    'user': user,
+    'verification_link': verification_url,
+    'current_year': timezone.now().year,
+})
+
+email = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
+email.attach_alternative(html_content, "text/html")
+email.send()
