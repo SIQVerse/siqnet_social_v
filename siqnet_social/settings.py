@@ -1,5 +1,8 @@
 import os
 
+# URL configuration
+ROOT_URLCONF = 'siqnet_social.urls'
+
 # Email configuration for Gmail SMTP
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
