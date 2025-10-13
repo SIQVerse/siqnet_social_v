@@ -24,6 +24,7 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('posts/', include('siqposts.urls')),
     path('profiles/', include('userposts.urls')),
+    path('userauth/', include('userauth.urls')),
     path('test-email/', test_email, name='test_email'),
 ]
 
