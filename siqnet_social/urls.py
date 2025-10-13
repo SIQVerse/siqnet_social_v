@@ -22,11 +22,10 @@ urlpatterns = [
     path('', home, name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
-    path('posts/', include('siqposts.urls')),       # ✅ Community feed
-    path('profiles/', include('userposts.urls')),   # ✅ Optional: user profiles
+    path('posts/', include('siqposts.urls')),
+    path('profiles/', include('userposts.urls')),
     path('test-email/', test_email, name='test_email'),
 ]
 
-# ✅ Serve media files during development
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
