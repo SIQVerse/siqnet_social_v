@@ -2,9 +2,10 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class Post(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='siqnet_posts')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='siqposts_posts')
+    title = models.CharField(max_length=255)
     content = models.TextField()
-    timestamp = models.DateTimeField(auto_now_add=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.author.username} - {self.timestamp.strftime('%Y-%m-%d %H:%M')}"
+        return f"{self.title} by {self.author.username}"
