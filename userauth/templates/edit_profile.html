@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Profile | SIQNet</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      max-width: 600px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      color: #0077cc;
+    }
+    label {
+      font-weight: bold;
+    }
+    textarea, input[type="file"] {
+      width: 100%;
+      margin-top: 5px;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Edit Your Profile</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    
+    <label for="bio">Bio:</label><br>
+    <textarea name="bio" rows="4">{{ user.profile.bio }}</textarea><br><br>
+
+    <label for="avatar">Upload Avatar:</label><br>
+    <input type="file" name="avatar"><br><br>
+
+    <label for="banner">Upload Banner:</label><br>
+    <input type="file" name="banner"><br><br>
+
+    <button type="submit">Save Changes</button>
+  </form>
+
+</body>
+</html>
