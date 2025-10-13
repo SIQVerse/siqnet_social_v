@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard | SIQNet</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <header>
+    <img src="{% static 'images/siqnet-logo.png' %}" alt="SIQNet Logo" height="60">
+    <h1>Welcome, {{ user.username }} 👋🏾</h1>
+  </header>
+
+  <section class="dashboard-cards">
+    <div class="card">
+      <h3>SIQ Score</h3>
+      <p>{{ user.profile.siq_score }}</p>
+    </div>
+    <div class="card">
+      <h3>Quick Links</h3>
+      <a href="{% url 'profile' %}">View Profile</a>
+      <a href="{% url 'create_post' %}">Create Post</a>
+    </div>
+  </section>
+</body>
+</html>
