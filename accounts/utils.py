@@ -17,3 +17,19 @@ def send_password_reset_email(user, reset_link):
     email = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
     email.attach_alternative(html_content, "text/html")
     email.send()
+
+def send_welcome_email(user, verification_link):
+    subject = "Welcome to SIQNet 🎉"
+    from_email = 'SIQNet <noreply@siqnet.com>'
+    to_email = user.email
+
+    text_content = "Welcome to SIQNet! Click the link to verify your email."
+    html_content = render_to_string('emails/welcome.html', {
+        'user': user,
+        'verification_link': verification_link,
+        'current_year': timezone.now().year,
+    })
+
+    email = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
+    email.attach_alternative(html_content, "text/html")
+    email.send()
