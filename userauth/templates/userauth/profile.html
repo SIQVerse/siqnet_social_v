@@ -22,12 +22,15 @@
     </a>
   </header>
 
-  <!-- 🏆 Campaign History -->
+  <!-- 🏆 Campaign History with Badges -->
   <section style="text-align: center; margin-top: 30px;">
     <h3>Campaigns Joined</h3>
     <ul style="list-style: none; padding: 0;">
       {% for campaign in user.profile.campaigns %}
-        <li>{{ campaign.name }} — {{ campaign.date_joined }}</li>
+        <li style="margin-bottom: 10px;">
+          <img src="{% static 'images/badges/' %}{{ campaign.badge }}.png" alt="{{ campaign.name }} badge" height="30" style="vertical-align: middle; margin-right: 10px;">
+          {{ campaign.name }} — {{ campaign.date_joined }}
+        </li>
       {% empty %}
         <li>No campaigns joined yet.</li>
       {% endfor %}
