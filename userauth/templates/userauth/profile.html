@@ -1,17 +1,26 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Profile | SIQNet</title>
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
+
+  <!-- 🔷 Profile Header -->
   <header style="text-align: center; padding: 20px;">
     <img src="{% static 'images/banner.jpg' %}" alt="Banner" style="width:100%; max-height:200px; object-fit:cover;">
     <img src="{% static 'images/avatar.png' %}" alt="Avatar" style="width:100px; border-radius:50%; margin-top:-50px;">
     <h2>{{ user.username }}</h2>
     <p>{{ user.profile.bio }}</p>
     <p><strong>SIQ Score:</strong> {{ user.profile.siq_score }}</p>
+
+    <!-- ✏️ Edit Profile Button -->
+    <a href="{% url 'edit_profile' %}">
+      <button style="margin-top: 15px;">Edit Profile</button>
+    </a>
   </header>
+
 </body>
 </html>
