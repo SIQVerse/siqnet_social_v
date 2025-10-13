@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to SIQNet</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .header {
+      background-color: #4B6CB7;
+      color: white;
+      padding: 20px;
+      border-radius: 8px 8px 0 0;
+      text-align: center;
+    }
+    .content {
+      padding: 20px;
+    }
+    .button {
+      background-color: #4B6CB7;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .footer {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>Welcome to SIQNet</h2>
+    </div>
+    <div class="content">
+      <p>Hi {{ user.username }},</p>
+      <p>We're thrilled to have you join SIQNet — your space to connect, share, and grow.</p>
+      <p>To get started, please verify your email by clicking the button below:</p>
+      <p><a href="{{ verification_link }}" class="button">Verify Email</a></p>
+      <p>If you didn’t sign up for SIQNet, you can safely ignore this email.</p>
+    </div>
+    <div class="footer">
+      &copy; {{ current_year }} SIQNet. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
