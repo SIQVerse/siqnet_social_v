@@ -1,16 +1,20 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Dashboard | SIQNet</title>
   <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-  <header>
+
+  <!-- 🔷 Branded Header -->
+  <header style="text-align: center; padding: 20px;">
     <img src="{% static 'images/siqnet-logo.png' %}" alt="SIQNet Logo" height="60">
     <h1>Welcome, {{ user.username }} 👋🏾</h1>
   </header>
 
+  <!-- 📊 Dashboard Cards -->
   <section class="dashboard-cards">
     <div class="card">
       <h3>SIQ Score</h3>
@@ -22,5 +26,11 @@
       <a href="{% url 'create_post' %}">Create Post</a>
     </div>
   </section>
+
+  <!-- 🧠 Manifesto Footer -->
+  <footer style="text-align: center; padding: 20px; font-style: italic; color: #555;">
+    “We follow the Zulu Principle: silence does not speak — our work does.”
+  </footer>
+
 </body>
 </html>
