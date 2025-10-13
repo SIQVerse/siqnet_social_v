@@ -1,12 +1,10 @@
-import os
-
-# URL configuration
-ROOT_URLCONF = 'siqnet_social.urls'
-
-# Email configuration for Gmail SMTP
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    'crispy_forms',
+    'django_extensions',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',  # or Facebook, GitHub, etc.
+]
