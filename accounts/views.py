@@ -31,3 +31,9 @@ def login_view(request):
 def logout_view(request):
     logout(request)
     return redirect('home')
+
+def password_reset(request):
+    return HttpResponse("Password reset page")
+
+def verify_email(request):
+    return HttpResponse("Email verification page")
