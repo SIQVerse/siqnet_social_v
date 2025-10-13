@@ -2,15 +2,16 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.utils import timezone
 
-def send_password_reset_email(user, reset_link):
-    subject = "Reset Your SIQNet Password"
+def send_mention_alert_email(user, mentioner_username, post_link):
+    subject = f"{mentioner_username} mentioned you in a post!"
     from_email = 'SIQNet <noreply@siqnet.com>'
     to_email = user.email
 
-    text_content = "Click the link to reset your password."
-    html_content = render_to_string('password_reset.html', {
+    text_content = f"{mentioner_username} mentioned you on SIQNet. Click to view."
+    html_content = render_to_string('emails/mention_alert.html', {
         'user': user,
-        'reset_link': reset_link,
+        'mentioner_username': mentioner_username,
+        'post_link': post_link,
         'current_year': timezone.now().year,
     })
 
@@ -18,15 +19,16 @@ def send_password_reset_email(user, reset_link):
     email.attach_alternative(html_content, "text/html")
     email.send()
 
-def send_welcome_email(user, verification_link):
-    subject = "Welcome to SIQNet 🎉"
+def send_group_invite_email(user, group_name, invite_link):
+    subject = f"You've been invited to join {group_name}!"
     from_email = 'SIQNet <noreply@siqnet.com>'
     to_email = user.email
 
-    text_content = "Welcome to SIQNet! Click the link to verify your email."
-    html_content = render_to_string('emails/welcome.html', {
+    text_content = f"You’ve been invited to join the group '{group_name}' on SIQNet."
+    html_content = render_to_string('emails/group_invite.html', {
         'user': user,
-        'verification_link': verification_link,
+        'group_name': group_name,
+        'invite_link': invite_link,
         'current_year': timezone.now().year,
     })
 
@@ -34,26 +36,20 @@ def send_welcome_email(user, verification_link):
     email.attach_alternative(html_content, "text/html")
     email.send()
 
-def send_comment_alert_email(user, post_title, comment_link):
-    subject = f"New Comment on '{post_title}'"
-    from_email = 'SIQNet <noreply@siqnet.com>'
+def send_security_alert_email(user, activity_type, location, timestamp):
+    subject = "Security Alert: New Activity on Your SIQNet Account"
+    from_email = 'SIQNet <security@siqnet.com>'
     to_email = user.email
 
-    text_content = f"You received a new comment on '{post_title}'. Click the link to view it."
-    html_content = render_to_string('emails/comment_alert.html', {
+    text_content = f"New {activity_type} detected from {location} at {timestamp}."
+    html_content = render_to_string('emails/security_alert.html', {
         'user': user,
-        'post_title': post_title,
-        'comment_link': comment_link,
+        'activity_type': activity_type,
+        'location': location,
+        'timestamp': timestamp,
         'current_year': timezone.now().year,
     })
 
     email = EmailMultiAlternatives(subject, text_content, from_email, [to_email])
     email.attach_alternative(html_content, "text/html")
     email.send()
-
-def send_new_follower_email(user, follower_username, profile_link):
-    subject = f"{follower_username} is now following you!"
-    from_email = 'SIQNet <noreply@siqnet.com>'
-    to_email = user.email
-
-    text_content = f
