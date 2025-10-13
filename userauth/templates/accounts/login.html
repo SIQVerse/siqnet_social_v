@@ -9,7 +9,11 @@
 
   <input type="checkbox" id="show-password" onclick="togglePassword()"> Show Password
 
-  <button type="submit">Log In</button>
+  <div style="margin-top: 10px;">
+    <a href="{% url 'password_reset' %}">Forgot your password?</a>
+  </div>
+
+  <button type="submit" style="margin-top: 15px;">Log In</button>
 </form>
 
 <script>
