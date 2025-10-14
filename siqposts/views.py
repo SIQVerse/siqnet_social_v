@@ -94,4 +94,43 @@ def edit_post(request, pk):
         post.save()
 
         # Update tags
-        post
+        post.tags.clear()
+        tag_names = request.POST.get('tags', '').split(',')
+        for name in tag_names:
+            name = name.strip()
+            if name:
+                tag, _ = Tag.objects.get_or_create(name=name)
+                post.tags.add(tag)
+
+        return redirect('post_detail', pk=pk)
+    return render(request, 'siqposts/edit_post.html', {'post': post})
+
+@login_required
+def notifications_view(request):
+    notifications = request.user.notifications.order_by('-created_at')
+    return render(request, 'siqposts/notifications.html', {'notifications': notifications})
+
+def avatar_view(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = user.profile
+    return render(request, 'siqposts/avatar_view.html', {'profile': profile})
+
+@login_required
+def inbox(request):
+    messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
+    return render(request, 'siqposts/inbox.html', {'messages': messages})
+
+@login_required
+def send_message(request, username):
+    recipient = get_object_or_404(User, username=username)
+    if request.method == 'POST':
+        content = request.POST.get('content')
+        if content:
+            Message.objects.create(sender=request.user, recipient=recipient, content=content)
+            return redirect('inbox')
+    return render(request, 'siqposts/send_message.html', {'recipient': recipient})
+
+def posts_by_tag(request, tag_name):
+    tag = get_object_or_404(Tag, name=tag_name)
+    posts = Post.objects.filter(tags=tag).order_by('-created_at')
+    return render(request, 'siqposts/posts_by_tag.html', {'tag': tag, 'posts': posts})
