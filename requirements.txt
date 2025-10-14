@@ -1,12 +1,10 @@
+pip>=25.2
+setuptools>=68.0.0
 Django==4.2.6
 gunicorn==21.2.0
 psycopg2-binary==2.9.9
 whitenoise==6.6.0
 djangorestframework==3.14.0
 dj-database-url>=1.0.0
-
-# Optional Additions
-django-allauth==0.58.2         # Social login and account linking
-Pillow==10.0.1                 # Image uploads (avatars, post images)
-django-crispy-forms==2.0.0     # Better form rendering
-django-extensions==3.2.3       # Dev tools like shell_plus
+django-allauth==0.58.2
+Pillow==10.0.1
