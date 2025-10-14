@@ -1,16 +1,10 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from .forms import PostForm
+from django.shortcuts import render, get_object_or_404
+from .models import Post
 
-@login_required
-def create_post(request):
-    if request.method == 'POST':
-        form = PostForm(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.save()
-            return redirect('profile')  # Adjust this redirect as needed
-    else:
-        form = PostForm()
-    return render(request, 'versnet/create_post.html', {'form': form})
+def post_list(request):
+    posts = Post.objects.all().order_by('-created_at')
+    return render(request, 'versnet/post_list.html', {'posts': posts})
+
+def post_detail(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    return render(request, 'versnet/post_detail.html', {'post': post})
