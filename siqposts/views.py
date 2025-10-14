@@ -2,7 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.models import User
-from .models import Post, Comment, Like, Profile
+from django.contrib.auth.decorators import login_required
+from .models import Post, Comment, Like, Profile, Notification
 
 def post_list(request):
     posts = Post.objects.all().order_by('-created_at')
@@ -16,6 +17,10 @@ def post_detail(request, pk):
         content = request.POST.get('content')
         if content and request.user.is_authenticated:
             Comment.objects.create(post=post, author=request.user, content=content)
+            Notification.objects.create(
+                recipient=post.author,
+                message=f"{request.user.username} commented on your post."
+            )
             return HttpResponseRedirect(reverse('post_detail', args=[pk]))
 
     return render(request, 'siqposts/post_detail.html', {'post': post, 'comments': comments})
@@ -42,6 +47,10 @@ def follow_user(request, username):
     target_user = get_object_or_404(User, username=username)
     profile = request.user.profile
     profile.following.add(target_user.profile)
+    Notification.objects.create(
+        recipient=target_user,
+        message=f"{request.user.username} started following you."
+    )
     return redirect('profile', username=username)
 
 def unfollow_user(request, username):
@@ -54,3 +63,25 @@ def search_posts(request):
     query = request.GET.get('q')
     results = Post.objects.filter(title__icontains=query) if query else []
     return render(request, 'siqposts/search_results.html', {'results': results, 'query': query})
+
+@login_required
+def create_post(request):
+    if request.method == 'POST':
+        title = request.POST.get('title')
+        content = request.POST.get('content')
+        image = request.FILES.get('image')
+        if title and content:
+            Post.objects.create(author=request.user, title=title, content=content, image=image)
+            return redirect('post_list')
+    return render(request, 'siqposts/create_post.html')
+
+@login_required
+def edit_post(request, pk):
+    post = get_object_or_404(Post, pk=pk, author=request.user)
+    if request.method == 'POST':
+        post.title = request.POST.get('title')
+        post.content = request.POST.get('content')
+        post.image = request.FILES.get('image')
+        post.save()
+        return redirect('post_detail', pk=pk)
+    return render(request, 'siqposts/edit_post.html', {'post': post})
