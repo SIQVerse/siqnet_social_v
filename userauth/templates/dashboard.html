@@ -1,36 +1,45 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Dashboard | SIQNet</title>
-  <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
+<div class="dashboard-announcement" style="margin: 30px auto; max-width: 800px; background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); padding: 25px; font-family: Arial, sans-serif;">
+  <h2 style="color: #00B894; text-align: center;">🚀 SIQNet Social V: The Future Is Already Here</h2>
+  <p style="font-size: 16px; line-height: 1.6; text-align: center;">
+    Welcome to the silence before the wave 🌊<br>
+    SIQNet Social V is quietly building the most creator-friendly, community-driven social experience on the web.
+    While others chase trends, we’re crafting tools that empower voices, not algorithms.
+  </p>
 
-  <!-- 🔷 Branded Header -->
-  <header style="text-align: center; padding: 20px;">
-    <img src="{% static 'images/siqnet-logo.png' %}" alt="SIQNet Logo" height="60">
-    <h1>Welcome, {{ user.username }} 👋🏾</h1>
-  </header>
+  <h3 style="margin-top: 30px; color: #333;">🧭 Competitive Positioning Matrix</h3>
+  <div style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
+      <thead>
+        <tr style="background-color: #00B894; color: white;">
+          <th style="padding: 10px;">Platform</th>
+          <th>Messaging</th>
+          <th>Tag Filtering</th>
+          <th>Profile Customization</th>
+          <th>Decentralized</th>
+          <th>Email Alerts</th>
+          <th>Monetization</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding: 10px;">SIQNet</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>✅</td><td>Coming Soon</td></tr>
+        <tr><td style="padding: 10px;">Facebook</td><td>✅</td><td>❌</td><td>✅</td><td>❌</td><td>✅</td><td>✅</td></tr>
+        <tr><td style="padding: 10px;">Mastodon</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td></tr>
+        <tr><td style="padding: 10px;">Threads</td><td>✅</td><td>❌</td><td>Limited</td><td>❌</td><td>❌</td><td>❌</td></tr>
+        <tr><td style="padding: 10px;">Bluesky</td><td>✅</td><td>✅</td><td>Limited</td><td>✅</td><td>❌</td><td>❌</td></tr>
+        <tr><td style="padding: 10px;">Hive Social</td><td>✅</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr>
+      </tbody>
+    </table>
+  </div>
 
-  <!-- 📊 Dashboard Cards -->
-  <section class="dashboard-cards">
-    <div class="card">
-      <h3>SIQ Score</h3>
-      <p>{{ user.profile.siq_score }}</p>
-    </div>
-    <div class="card">
-      <h3>Quick Links</h3>
-      <a href="{% url 'profile' %}">View Profile</a>
-      <a href="{% url 'create_post' %}">Create Post</a>
-    </div>
-  </section>
+  <h3 style="margin-top: 30px; color: #333;">🧠 Strategic Insights</h3>
+  <ul style="font-size: 16px; line-height: 1.6;">
+    <li>SIQNet is feature-rich and creator-friendly, with a strong foundation for community engagement.</li>
+    <li>You’re building a hybrid of <strong>Facebook’s reach</strong>, <strong>Mastodon’s openness</strong>, and <strong>Hive’s personalization</strong>.</li>
+    <li>We’re not here to compete on noise. We’re here to build quietly, launch boldly, and surprise the world.</li>
+  </ul>
 
-  <!-- 🧠 Manifesto Footer -->
-  <footer style="text-align: center; padding: 20px; font-style: italic; color: #555;">
-    “We follow the Zulu Principle: silence does not speak — our work does.”
-  </footer>
-
-</body>
-</html>
+  <p style="text-align: center; margin-top: 30px; font-size: 16px;">
+    💬 Want to be part of the silence before the storm?<br>
+    <strong>Join SIQNet Social V</strong> — where creators lead, communities thrive, and the future is built in whispers.
+  </p>
+</div>
