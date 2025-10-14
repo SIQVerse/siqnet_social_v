@@ -1,0 +1,4 @@
+def search_posts(request):
+    query = request.GET.get('q')
+    results = Post.objects.filter(title__icontains=query) if query else []
+    return render(request, 'siqposts/search_results.html', {'results': results, 'query': query})
