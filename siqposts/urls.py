@@ -1,22 +1,19 @@
-from django.urls import path
-from . import views
-from rest_framework.routers import DefaultRouter
-from .api_views import PostViewSet, CommentViewSet
+@login_required
+def inbox(request):
+    messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
+    return render(request, 'siqposts/inbox.html', {'messages': messages})
 
-router = DefaultRouter()
-router.register(r'posts', PostViewSet)
-router.register(r'comments', CommentViewSet)
+@login_required
+def send_message(request, username):
+    recipient = get_object_or_404(User, username=username)
+    if request.method == 'POST':
+        content = request.POST.get('content')
+        if content:
+            Message.objects.create(sender=request.user, recipient=recipient, content=content)
+            return redirect('inbox')
+    return render(request, 'siqposts/send_message.html', {'recipient': recipient})
 
-urlpatterns = [
-    path('', views.post_list, name='post_list'),
-    path('post/<int:pk>/', views.post_detail, name='post_detail'),
-    path('post/<int:pk>/like/', views.toggle_like, name='toggle_like'),
-    path('post/create/', views.create_post, name='create_post'),
-    path('post/<int:pk>/edit/', views.edit_post, name='edit_post'),
-    path('user/<str:username>/', views.profile_view, name='profile'),
-    path('user/<str:username>/follow/', views.follow_user, name='follow_user'),
-    path('user/<str:username>/unfollow/', views.unfollow_user, name='unfollow_user'),
-    path('search/', views.search_posts, name='search_posts'),
-]
-
-urlpatterns += router.urls
+def posts_by_tag(request, tag_name):
+    tag = get_object_or_404(Tag, name=tag_name)
+    posts = Post.objects.filter(tags=tag).order_by('-created_at')
+    return render(request, 'siqposts/posts_by_tag.html', {'tag': tag, 'posts': posts})
