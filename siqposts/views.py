@@ -3,7 +3,7 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from .models import Post, Comment, Like, Profile, Notification
+from .models import Post, Comment, Like, Profile, Notification, Message, Tag
 
 def post_list(request):
     posts = Post.objects.all().order_by('-created_at')
@@ -71,7 +71,16 @@ def create_post(request):
         content = request.POST.get('content')
         image = request.FILES.get('image')
         if title and content:
-            Post.objects.create(author=request.user, title=title, content=content, image=image)
+            post = Post.objects.create(author=request.user, title=title, content=content, image=image)
+
+            # Handle tags
+            tag_names = request.POST.get('tags', '').split(',')
+            for name in tag_names:
+                name = name.strip()
+                if name:
+                    tag, _ = Tag.objects.get_or_create(name=name)
+                    post.tags.add(tag)
+
             return redirect('post_list')
     return render(request, 'siqposts/create_post.html')
 
@@ -83,15 +92,6 @@ def edit_post(request, pk):
         post.content = request.POST.get('content')
         post.image = request.FILES.get('image')
         post.save()
-        return redirect('post_detail', pk=pk)
-    return render(request, 'siqposts/edit_post.html', {'post': post})
 
-@login_required
-def notifications_view(request):
-    notifications = request.user.notifications.order_by('-created_at')
-    return render(request, 'siqposts/notifications.html', {'notifications': notifications})
-
-def avatar_view(request, username):
-    user = get_object_or_404(User, username=username)
-    profile = user.profile
-    return render(request, 'siqposts/avatar_view.html', {'profile': profile})
+        # Update tags
+        post
