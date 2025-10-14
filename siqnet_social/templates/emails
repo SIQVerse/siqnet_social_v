@@ -37,6 +37,11 @@
       display: inline-block;
       margin-top: 20px;
     }
+    .fallback {
+      font-size: 14px;
+      margin-top: 20px;
+      word-break: break-word;
+    }
     .footer {
       font-size: 12px;
       color: #888;
@@ -52,9 +57,15 @@
     </div>
     <div class="content">
       <p>Hi {{ user.username }},</p>
-      <p>Someone just commented on your post titled <strong>{{ post_title }}</strong>.</p>
+      <p><strong>{{ commenter_name }}</strong> just commented on your post titled <strong>{{ post_title }}</strong>.</p>
       <p>Click below to view the comment:</p>
-      <p><a href="{{ comment_link }}" class="button">View Comment</a></p>
+      <p>
+        <a href="{{ comment_link }}" class="button" aria-label="View the new comment on your post">View Comment</a>
+      </p>
+      <div class="fallback">
+        <p>If the button doesn't work, copy and paste this link into your browser:</p>
+        <p>{{ comment_link }}</p>
+      </div>
     </div>
     <div class="footer">
       &copy; {{ current_year }} SIQNet. All rights reserved.
