@@ -85,3 +85,13 @@ def edit_post(request, pk):
         post.save()
         return redirect('post_detail', pk=pk)
     return render(request, 'siqposts/edit_post.html', {'post': post})
+
+@login_required
+def notifications_view(request):
+    notifications = request.user.notifications.order_by('-created_at')
+    return render(request, 'siqposts/notifications.html', {'notifications': notifications})
+
+def avatar_view(request, username):
+    user = get_object_or_404(User, username=username)
+    profile = user.profile
+    return render(request, 'siqposts/avatar_view.html', {'profile': profile})
