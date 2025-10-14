@@ -1,19 +1,19 @@
-@login_required
-def inbox(request):
-    messages = Message.objects.filter(recipient=request.user).order_by('-timestamp')
-    return render(request, 'siqposts/inbox.html', {'messages': messages})
+from django.urls import path
+from . import views
 
-@login_required
-def send_message(request, username):
-    recipient = get_object_or_404(User, username=username)
-    if request.method == 'POST':
-        content = request.POST.get('content')
-        if content:
-            Message.objects.create(sender=request.user, recipient=recipient, content=content)
-            return redirect('inbox')
-    return render(request, 'siqposts/send_message.html', {'recipient': recipient})
-
-def posts_by_tag(request, tag_name):
-    tag = get_object_or_404(Tag, name=tag_name)
-    posts = Post.objects.filter(tags=tag).order_by('-created_at')
-    return render(request, 'siqposts/posts_by_tag.html', {'tag': tag, 'posts': posts})
+urlpatterns = [
+    path('', views.post_list, name='post_list'),
+    path('post/<int:pk>/', views.post_detail, name='post_detail'),
+    path('post/<int:pk>/like/', views.toggle_like, name='toggle_like'),
+    path('create/', views.create_post, name='create_post'),
+    path('edit/<int:pk>/', views.edit_post, name='edit_post'),
+    path('profile/<str:username>/', views.profile_view, name='profile'),
+    path('follow/<str:username>/', views.follow_user, name='follow_user'),
+    path('unfollow/<str:username>/', views.unfollow_user, name='unfollow_user'),
+    path('search/', views.search_posts, name='search_posts'),
+    path('notifications/', views.notifications_view, name='notifications'),
+    path('avatar/<str:username>/', views.avatar_view, name='avatar_view'),
+    path('inbox/', views.inbox, name='inbox'),
+    path('message/<str:username>/', views.send_message, name='send_message'),
+    path('tag/<str:tag_name>/', views.posts_by_tag, name='posts_by_tag'),
+]
