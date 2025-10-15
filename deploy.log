@@ -1,0 +1,7 @@
+@echo off
+echo === Deploy started at %date% %time% === >> deploy.log
+docker stop siqverse >> deploy.log 2>&1
+docker rm siqverse >> deploy.log 2>&1
+docker build -t siqverse . >> deploy.log 2>&1
+docker run -d -p 8000:8000 --name siqverse siqverse >> deploy.log 2>&1
+echo === Deploy finished at %date% %time% === >> deploy.log
