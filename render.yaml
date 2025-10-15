@@ -1,10 +1,8 @@
-# render.yaml
-
 services:
   - type: web
     name: siqnet-social
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn siqnet.wsgi:application"
+    startCommand: "gunicorn siqnet_social.wsgi:application"
     plan: free
     pythonVersion: 3.11
