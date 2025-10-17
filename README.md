@@ -6,24 +6,24 @@
 
 ## 🚀 Features
 
-- Django backend with PostgreSQL integration
-- Modular apps for user posts, community, authentication, and more
-- Responsive frontend served via Django templates
-- Built-in support for civic tech workflows and social dynamics
-- Docker-ready for containerized deployment
+- Django backend with PostgreSQL integration  
+- Modular apps for user posts, community, authentication, and more  
+- Responsive frontend served via Django templates  
+- Built-in support for civic tech workflows and social dynamics  
+- Docker-ready for containerized deployment  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Django + Django REST Framework (Python 3.11+)
-- **Database**: PostgreSQL
-- **Frontend**: HTML, CSS, JavaScript
-- **Auth**: Django Allauth (email, social login)
-- **Deployment**: Railway, Docker
-- **Observability**: Railway Logs & Metrics
-- **Other Tools**: Gunicorn, Render (optional), Cloudflare (recommended)
-- **Time Zone**: Africa/Lusaka
+- **Backend**: Django + Django REST Framework (Python 3.11+)  
+- **Database**: PostgreSQL  
+- **Frontend**: HTML, CSS, JavaScript  
+- **Auth**: Django Allauth (email, social login)  
+- **Deployment**: Railway, Docker  
+- **Observability**: Railway Logs & Metrics  
+- **Other Tools**: Gunicorn, Render (optional), Cloudflare (recommended)  
+- **Time Zone**: Africa/Lusaka  
 
 ---
 
@@ -51,5 +51,3 @@ DB_USER=postgres
 DB_PASSWORD=your-db-password
 DB_HOST=your-db-host
 DB_PORT=5432
-
-
