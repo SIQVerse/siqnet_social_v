@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Welcome to SIQNet Social V!")
+    return HttpResponse("Welcome to SIQNet Social V — now live at https://siqnet.tech!")
 
 def register(request):
     if request.method == 'POST':
