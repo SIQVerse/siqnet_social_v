@@ -34,11 +34,13 @@ SIQNet is open to contributors aligned with its mission of civic empowerment and
 
 ## 🧭 Founder’s Note
 
-Since the outbreak of COVID-19, the world was forced into silence. Schools closed. Borders shut. Public spaces emptied. Travel halted. Physical contact became a risk, and isolation became the norm. In that global stillness, the founder of SIQNet began listening — not to noise, but to the **messages within silence**.
+When COVID-19 broke out, the world was forced into silence. Schools closed. Borders shut. Public spaces emptied. Travel halted. Physical contact became a risk, and isolation became the norm. In that global stillness, the founder of SIQNet began listening — not to noise, but to the **messages within silence**.
 
-The pandemic exposed a critical truth: the world lacked platforms for closure, connection, and community during times of crisis. People were disconnected from loved ones. Communities lost cohesion. The global village felt fractured. The silence was loud — and it spoke of a need for something deeper.
+The pandemic exposed a critical truth: the world lacked platforms for closure, connection, and community during times of crisis. But even more devastating was the spread of **unverified misinformation**. Panic surged. People made decisions based on fear, not facts. Lives were lost — not just to the virus, but to confusion, distrust, and digital chaos.
 
-**SIQNet was born from that silence.** A sovereign civic tech platform designed to restore connection, empower voices, and build bridges even when the world shuts down. It is a response to isolation, a tool for resilience, and a declaration of digital sovereignty.
+**SIQNet was born from that silence.** A sovereign civic tech platform designed to restore connection, empower voices, and build bridges even when the world shuts down. It is a response to isolation, a tool for resilience, and a declaration of digital sovereignty. It is also a commitment to **verified truth** — to ensure that in future crises, communities are informed, not misled.
 
 Since then, the founder has embraced digital silence — stepping away from social media’s daily noise to build something deeper.  
 **When SIQNet goes live, the silence will break. The link will drop. And the world will feel the BOOOOOOM.**
+
+**WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOW — now the world will relate, remember, and relive the experience of life during and after COVID-19.**
