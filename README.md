@@ -43,4 +43,4 @@ The pandemic exposed a critical truth: the world lacked platforms for closure, c
 Since then, the founder has embraced digital silence — stepping away from social media’s daily noise to build something deeper.  
 **When SIQNet goes live, the silence will break. The link will drop. And the world will feel the BOOOOOOM.**
 
-**WOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOW — now the world will relate, remember, and relive the experience of life during and after COVID-19.**
+**Now, the world will relate. The world will remember. The world will relive the experience of life during and after COVID-19 — and rise.**
