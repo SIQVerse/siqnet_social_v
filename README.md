@@ -10,44 +10,23 @@
 - Modular apps for user posts, community, authentication, and more  
 - Responsive frontend served via Django templates  
 - Built-in support for civic tech workflows and social dynamics  
-- Docker-ready for containerized deployment  
+- Railway-hosted with secure production settings  
+- Email and social login via Django Allauth  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Django + Django REST Framework (Python 3.11+)  
+- **Backend**: Django + Django REST Framework (Python 3.11)  
 - **Database**: PostgreSQL  
 - **Frontend**: HTML, CSS, JavaScript  
-- **Auth**: Django Allauth (email, social login)  
-- **Deployment**: Railway, Docker  
+- **Auth**: Django Allauth  
+- **Deployment**: Railway (Live at [siqnet.tech](https://siqnet.tech)), powered by Python 3.11  
 - **Observability**: Railway Logs & Metrics  
-- **Other Tools**: Gunicorn, Render (optional), Cloudflare (recommended)  
+- **Other Tools**: Gunicorn, Cloudflare (recommended)  
 - **Time Zone**: Africa/Lusaka  
 
 ---
 
 ## 📦 Project Structure
 
-- `userauth/` – Authentication and profile management  
-- `userposts/` – User-generated content  
-- `community/` – Civic groups and engagement  
-- `accounts/` – Account settings and permissions  
-- `siqposts/` – Sovereign identity posts  
-- `versnet/` – Network layer for civic workflows  
-
----
-
-## 📄 Environment Variables
-
-Set these in Railway or your `.env` file:
-
-```env
-SECRET_KEY=your-secret-key
-DEBUG=False
-ALLOWED_HOSTS=yourdomain.com
-DB_NAME=siqnet
-DB_USER=postgres
-DB_PASSWORD=your-db-password
-DB_HOST=your-db-host
-DB_PORT=5432
