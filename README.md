@@ -4,9 +4,15 @@
 
 ---
 
-## 🧘🏿 Zulu Principle of Communicative Silence
+## 🧘🏿 The Zulu Principle of Communicative Silence
 
-SIQNet is rooted in the **Zulu Principle of Communicative Silence** — a philosophy of intentional withdrawal from noise to cultivate clarity, power, and presence. This principle guides the platform’s architecture and its founder’s digital strategy: silence before impact, reflection before revelation. SIQNet emerges not as a reaction, but as a declaration.
+SIQNet is rooted in **The Zulu Principle of Communicative Silence** — a philosophy of intentional withdrawal from noise to cultivate clarity, power, and presence. This principle guides the platform’s architecture and its founder’s digital strategy: silence before impact, reflection before revelation. SIQNet emerges not as a reaction, but as a declaration.
+
+---
+
+## 🧠 Silence Intelligence Quotient (SIQ)
+
+At the heart of SIQNet lies the **Silence Intelligence Quotient (SIQ)** — a measure of one’s ability to interpret, harness, and act upon the power of silence. SIQ is not about absence; it’s about awareness. It reflects the capacity to listen deeply, respond wisely, and build intentionally. SIQNet is designed to elevate this quotient across individuals, communities, and nations.
 
 ---
 
