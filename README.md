@@ -36,9 +36,9 @@ SIQNet is open to contributors aligned with its mission of civic empowerment and
 
 Since the outbreak of COVID-19, the world was forced into silence. Schools closed. Borders shut. Public spaces emptied. Travel halted. Physical contact became a risk, and isolation became the norm. In that global stillness, the founder of SIQNet began listening — not to noise, but to the **messages within silence**.
 
-The pandemic exposed a critical truth: the world lacked platforms for closure, connection, and community during times of crisis. People were disconnected from loved ones, communities lost cohesion, and the global village felt fractured. The silence was loud — and it spoke of a need for something deeper.
+The pandemic exposed a critical truth: the world lacked platforms for closure, connection, and community during times of crisis. People were disconnected from loved ones. Communities lost cohesion. The global village felt fractured. The silence was loud — and it spoke of a need for something deeper.
 
-SIQNet was born from that silence. A sovereign civic tech platform designed to restore connection, empower voices, and build bridges even when the world shuts down. It is a response to isolation, a tool for resilience, and a declaration of digital sovereignty.
+**SIQNet was born from that silence.** A sovereign civic tech platform designed to restore connection, empower voices, and build bridges even when the world shuts down. It is a response to isolation, a tool for resilience, and a declaration of digital sovereignty.
 
 Since then, the founder has embraced digital silence — stepping away from social media’s daily noise to build something deeper.  
 **When SIQNet goes live, the silence will break. The link will drop. And the world will feel the BOOOOOOM.**
