@@ -5,8 +5,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('userauth/', include('userauth.urls')),  # Include your app's URLs
+    path('', include('accounts.urls')),
+    path('userauth/', include('userauth.urls')),
+    path('userposts/', include('userposts.urls')),
+    path('community/', include('community.urls')),
+    path('siqposts/', include('siqposts.urls')),
+    path('versnet/', include('versnet.urls')),
 ]
 
-# 🔧 Serve media files during development
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
