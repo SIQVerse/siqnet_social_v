@@ -1,0 +1,34 @@
+siqnet/
+│
+├── backend/
+│   ├── main.py
+│   ├── video/
+│   │   └── upload.py
+│   ├── analytics/
+│   │   └── metrics.py
+│   ├── ai/
+│   │   ├── moderation.py
+│   │   ├── personalize.py
+│   │   └── config.yaml
+│   ├── partnerships/
+│   │   └── impact.py
+│   └── requirements.txt
+│
+├── web/
+│   ├── video/
+│   │   ├── stream.html
+│   │   └── stream.js
+│   ├── analytics/
+│   │   ├── dashboard.html
+│   │   └── charts.js
+│   ├── partnerships/
+│   │   └── portal.html
+│
+├── mobile/
+│   ├── App.js
+│   ├── OfflineStorage.js
+│   └── SyncService.js
+│
+├── docs/
+│   ├── case_study.md
+│   └── brief.pdf
