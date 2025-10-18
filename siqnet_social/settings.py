@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ✅ Security settings
 SECRET_KEY = os.environ.get("SECRET_KEY", "your-default-secret-key")
 DEBUG = os.environ.get("DEBUG", "False") == "True"
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "siqnet-social-v.onrender.com").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "siqnet.tech").split(",")
 
 # ✅ Installed apps
 INSTALLED_APPS = [
@@ -92,8 +92,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # ✅ Internationalization
-LANGUAGE_CODE = "en-us"
-TIME_ZONE = "Africa/Lusaka"
+LANGUAGE_CODE = os.environ.get("LANGUAGE_CODE", "en-us")
+TIME_ZONE = os.environ.get("TIME_ZONE", "Africa/Lusaka")
 USE_I18N = True
 USE_TZ = True
 
