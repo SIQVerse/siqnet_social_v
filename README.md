@@ -34,4 +34,5 @@ The pandemic exposed a critical truth: the world lacked platforms for closure, c
 
 SIQNet was born from that silence. A sovereign civic tech platform designed to restore connection, empower voices, and build bridges even when the world shuts down. It is a response to isolation, a tool for resilience, and a declaration of digital sovereignty.
 
-Since then, the founder has embraced digital silence — stepping away from social media’s daily noise to build something deeper. When SIQNet goes live, the silence will break. The link will drop. And the world will feel the BOOOOOOM.
+Since then, the founder has embraced digital silence — stepping away from social media’s daily noise to build something deeper.  
+**When SIQNet goes live, the silence will break. The link will drop. And the world will feel the BOOOOOOM.**
