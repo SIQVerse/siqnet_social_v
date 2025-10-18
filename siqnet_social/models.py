@@ -10,3 +10,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['-created_at']
+        verbose_name = "Post"
+        verbose_name_plural = "Posts"
